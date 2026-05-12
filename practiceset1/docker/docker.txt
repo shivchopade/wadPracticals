@@ -1,0 +1,12 @@
+docker --version
+docker pull ubuntu
+docker run -it ubuntu
+apt update
+ls
+mkdir test
+cd test
+exit
+docker ps -a
+docker stop CONTAINER_ID
+docker rm CONTAINER_ID
+

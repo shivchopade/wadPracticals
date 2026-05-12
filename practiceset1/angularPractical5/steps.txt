@@ -1,0 +1,36 @@
+npm install -g @angular/cli
+
+ng version
+
+ng new <name of your application folder>
+
+cd <my-angular-app>
+
+ng serve
+
+ng g c register
+ng g c login
+ng g c profile
+
+## open this files and add the code
+src/app/app.routes.ts
+register.component.ts
+
+register.component.html
+login.component.ts
+login.component.html
+profile.component.ts
+profile.component.html
+
+app.component.html
+
+app.config.ts
+
+ng serve
+
+
+
+
+
+
+
