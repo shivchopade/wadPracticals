@@ -1,23 +1,214 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h2>User Registration</h2>
+<div class="container-fluid">
 
-<input type="text" id="name" placeholder="Enter Name">
-<br><br>
+    <div class="row">
 
-<input type="email" id="email" placeholder="Enter Email">
-<br><br>
+        <div class="col-md-2 sidebar">
 
-<button onclick="registerUser()">Register</button>
+            <h2 class="logo">Exam Admin</h2>
 
-<br><br>
+            <a href="#" onclick="showSection('dashboard')">
+                <i class="bi bi-speedometer2"></i>
+                Dashboard
+            </a>
 
-<a href="users.html">View Users</a>
+            <a href="#" onclick="showSection('students')">
+                <i class="bi bi-people-fill"></i>
+                Students
+            </a>
+
+            <a href="#" onclick="showSection('settings')">
+                <i class="bi bi-gear-fill"></i>
+                Settings
+            </a>
+
+        </div>
+
+        <div class="col-md-10 main-content">
+
+            <div class="topbar">
+
+                <h3 id="pageTitle">Dashboard</h3>
+
+                <h5 id="time"></h5>
+
+            </div>
+
+
+            <div id="dashboard">
+
+                <div class="row mt-4">
+
+                    <div class="col-md-4">
+
+                        <div class="card dashboard-card bg-primary text-white">
+
+                            <div class="card-body text-center">
+
+                                <i class="bi bi-people-fill icon"></i>
+
+                                <h5>Total Students</h5>
+
+                                <h2 id="studentsCount">1200</h2>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="card dashboard-card bg-success text-white">
+
+                            <div class="card-body text-center">
+
+                                <i class="bi bi-file-earmark-text-fill icon"></i>
+
+                                <h5>Total Exams</h5>
+
+                                <h2 id="examCount">25</h2>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="card dashboard-card bg-danger text-white">
+
+                            <div class="card-body text-center">
+
+                                <i class="bi bi-clock-fill icon"></i>
+
+                                <h5>Pending Exams</h5>
+
+                                <h2 id="pendingCount">7</h2>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button class="btn btn-dark mt-4"
+                        onclick="refreshData()">
+
+                    Refresh Data
+
+                </button>
+
+            </div>
+
+
+            <div id="students" class="section">
+
+                <div class="card p-4 mt-4">
+
+                    <h3>Student List</h3>
+
+                    <table class="table table-hover mt-3">
+
+                        <thead class="table-dark">
+
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Course</th>
+                            <th>Year</th>
+
+                        </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                        <tr>
+                            <td>Shivam</td>
+                            <td>IT</td>
+                            <td>Third Year</td>
+                        </tr>
+
+                        <tr>
+                            <td>Rahul</td>
+                            <td>Computer</td>
+                            <td>Second Year</td>
+                        </tr>
+
+                        <tr>
+                            <td>Aman</td>
+                            <td>ENTC</td>
+                            <td>Final Year</td>
+                        </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <div id="settings" class="section">
+
+                <div class="card p-4 mt-4">
+
+                    <h3>Settings</h3>
+
+                    <br>
+
+                    <label>Admin Name</label>
+
+                    <input type="text"
+                           class="form-control"
+                           placeholder="Enter Admin Name">
+
+                    <br>
+
+                    <label>Email</label>
+
+                    <input type="email"
+                           class="form-control"
+                           placeholder="Enter Email">
+
+                    <br>
+
+                    <button class="btn btn-success">
+
+                        Save Settings
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 <script src="script.js"></script>
 

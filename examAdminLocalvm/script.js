@@ -1,36 +1,41 @@
-function registerUser() {
+function showTime(){
 
-    let name = document.getElementById("name").value;
+    let date = new Date();
 
-    let email = document.getElementById("email").value;
-
-    let user = {
-        name: name,
-        email: email
-    };
-
-    // Get old users
-    let users = JSON.parse(localStorage.getItem("users")) || [];
-
-    // Push new user
-    users.push(user);
-
-    // Save again
-    localStorage.setItem("users", JSON.stringify(users));
-
-    // AJAX POST
-
-    let xhr = new XMLHttpRequest();
-
-    xhr.open("POST", "https://jsonplaceholder.typicode.com/posts");
-
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    xhr.onload = function () {
-
-        alert("User Registered Successfully");
-
-    };
-
-    xhr.send(JSON.stringify(user));
+    document.getElementById("time").innerHTML =
+    date.toLocaleString();
 }
+
+setInterval(showTime,1000);
+
+
+function refreshData(){
+
+    document.getElementById("studentsCount").innerHTML =
+    Math.floor(Math.random()*2000);
+
+    document.getElementById("examCount").innerHTML =
+    Math.floor(Math.random()*50);
+
+    document.getElementById("pendingCount").innerHTML =
+    Math.floor(Math.random()*20);
+}
+
+
+function showSection(section){
+
+    document.getElementById("dashboard").style.display = "none";
+
+    document.getElementById("students").style.display = "none";
+
+    document.getElementById("settings").style.display = "none";
+
+    document.getElementById(section).style.display = "block";
+
+    document.getElementById("pageTitle").innerHTML =
+    section.charAt(0).toUpperCase() + section.slice(1);
+}
+
+
+document.getElementById("dashboard").style.display = "block";
+
